@@ -52,13 +52,12 @@
 
 .container{
     max-width: 1000px;
-    padding: 0 10px;
     box-sizing: border-box;
     margin: 0 auto;
 }
 
-.about_us_contents{
-    padding-top: 100px;
+.about_us_contents_pc{
+    padding: 100px 10px 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -98,6 +97,9 @@
     padding-top: 25px;
 }
 
+.about_us_contents_sp{
+    display: none;
+}
 .menu{
     margin: 0 auto;
     padding: 30px 10px;
@@ -171,7 +173,6 @@
     max-width: 650px;
     margin: 0 auto;
 }
-  
 
 .event_detail dt{
     width: 21%;
@@ -183,7 +184,6 @@
 .event_detail dd{
     width: 79%;
     font-size: 23px;
-    border-bottom: solid 1px #4F260B;
     margin: 10px 0;
     text-align: left;
 }
@@ -248,29 +248,127 @@
     width: 125px;
 }
 
-@media screen and (max-width: 375px) {
- .header_nav{
+.hamburger,
+.header_nav-sp{
     display: none;
 }
+@media screen and (max-width:1100px){
+.header_nav{
+    display: none;
+}    
 
-#hamburger{
-    display: flex;
-    flex-direction: column;
-    gap: 5px; 
-    height: 22px; 
-    justify-content: center;
-    width: 32px; 
-  }
-.hamburger-menu{
-  background-color: #fff;
-  display: block;
-  height: 3px; 
-  width: 20px; 
+.hamburger{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 9999;
 }
 
+.hamburger span{
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    content: "";
+    top:13px;
+    transition: .3s;
+}
+
+.hamburger span::before{
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    content: "";
+    top:-13px;
+    transition: .3s;
+}
+
+.hamburger span::after{
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    content: "";
+    bottom:-13px;
+    transition: .3s;
+}
+
+.open span{
+    background-color: transparent;
+}
+
+.open span::before{
+    transform: rotate(45deg);
+    top:0;
+}
+.open span::after{
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.header_nav-sp{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000006c;
+}
+
+.header_nav-sp ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    height: 100%;
+}
+
+.header_nav-sp li{
+    color: #fff;
+    font-weight: bold;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+.text01{
+    font-size: 23px;
+    padding-bottom: 20px;
+}
+
+.text02{
+   font-size: 50PX;
+   line-height: 1.15;
+   letter-spacing:0.02em;
+   padding-bottom: 20px;
+}
+
+.text03{
+    font-size: 20px;
+    line-height: 1.87;
+    padding: 0 15px;
+}
+
+.aboutus_text01{
+    font-size: 36px;
+    line-height: 1.25;
+}
+
+.aboutus_text02{
+    font-size: 16px;
+    line-height: 1.75;
+}
+}
+    @media screen and (max-width: 767px) {
 .logo{
     width: 187px;
     }
+
+.sp_br{
+    display: block;
+}
 
 .text01{
     font-size: 17px;
@@ -287,32 +385,31 @@
 .text03{
     font-size: 16px;
     line-height: 1.87;
-    padding: 0 15px;
+    padding-bottom: 60px;
 }
 
-.sp_br{
+.about_us_contents_pc{
+    display: none;
+}
+
+.about_us_contents_sp{
     display: block;
 }
 
-.about_us_contents{
-    display: block;
+.aboutus_logo{
+    padding: 0%;
 }
 
 .aboutus_img img {
-    height: 250px;
-}
-
-.aboutus_text01{
-    font-size: 36px;
-    line-height: 1.25;
-}
-
-.aboutus_text02{
     width: 100%;
-    font-size: 16px;
-    line-height: 1.75;
 }
 
+.aboutus_text{
+    padding: 0 10px;
+}
+.aboutus_text02{
+    width: auto;
+}
 .menu>ul{
     display: flex;
     flex-direction: column;
@@ -328,8 +425,12 @@
 }
 
 .sp_gallery_img{
+    display: block;
     max-width: 100%;
-    padding: 0 10px;
+}
+
+.gallery_img{
+    width: 100%;
 }
 .pc_event_detail{
     display: none;
