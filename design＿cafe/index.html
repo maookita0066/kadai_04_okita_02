@@ -7,9 +7,12 @@
     <title>デザインカフェ</title>
 
     <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -45,10 +48,16 @@
             </ul>
         </nav>
 
-        <picture class="=mainvisual">
-            <source srcset="./images/sp_main_vs@2x-100.jpg" media="(max-width: 767px)" />
-            <img src="./images/pc_first-100.jpg" alt="カフェ店内の様子" />
-        </picture>
+        <div class="mainvisual">
+            <picture>
+                <source srcset="./images/sp_main_vs@2x-100.jpg" media="(max-width: 767px)" />
+                <img src="./images/pc_first-100.jpg" alt="カフェ店内の様子" />
+            </picture>
+            <picture>
+                <source srcset="./images/sp_main_vs_2@2x-100.jpg" media="(max-width: 767px)" />
+                <img src="./images/slider_2.jpg" alt="カフェ店内の様子" />
+            </picture>
+        </div>
     </header>
     <main class="main">
         <div class="main_text">
@@ -155,14 +164,10 @@
                     <dl>
                         <dt>2020.06.23</dt>
                         <dd class="pc_event_detail"><a href="">7月はイベント出店のため0/0お休みします</a></dd>
-                        <dd class="sp_event_detail"><a href="">7月はイベント出店のため0/0･･･</a></dd>
                         <dt>2020.03.15</dt>
                         <dd class="pc_event_detail"><a href="">7春の新商品新発売。話題のあのブランドとコラボ</a></dd>
-                        <dd class="sp_event_detail"><a href="">春の新商品新発売。話題のあのブランド･･･</a></dd>
                         <dt>2020.02.06</dt>
                         <dd class="pc_event_detail"><a href="">コーヒーの日で30％OFFイベントを開催［3日間限定］</a></dd>
-                        <dd class="sp_event_detail"><a href="">コーヒーの日で30％OFFイベントを･･･</a></dd>
-                    </dl>
                 </div>
             </section>
         </div>
@@ -215,6 +220,16 @@
                 $(".header_nav-sp").fadeToggle();
             });
         });
+
+        $(function () {
+            $(".mainvisual").slick({
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+            });
+        });
+
     </script>
 </body>
 
