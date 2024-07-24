@@ -183,6 +183,7 @@
 }
 
 .pc_event_detail a{
+    text-decoration: underline;
     border-bottom: solid 1px #4F260B;
 }
 
