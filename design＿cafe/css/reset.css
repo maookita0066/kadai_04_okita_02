@@ -31,7 +31,7 @@ body{
 }
 
 a {
-    /*下線を消す*/
+    /* 下線を消す */
     text-decoration: none;
     /*色を消す*/
     color: inherit;
